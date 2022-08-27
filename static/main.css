@@ -1,0 +1,15 @@
+/*.menu-image-eng:hover{
+    transform: scale(5);
+    z-index:1;
+    position:relative;
+    top:19.35rem;
+    left:-30rem;
+}
+.menu-image-kor:hover{
+    transform: scale(5);
+    z-index:1;
+    position:relative;
+    left:-30rem;
+    top:7.85rem;
+}
+*/
