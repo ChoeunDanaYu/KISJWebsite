@@ -1,0 +1,25 @@
+{% load static %}
+<div class="container" style="max-width:100%; background-color: #F9B82C;">
+    <div class="row justify-content-center">
+        <div class="col d-flex justify-content-center align-items-center">
+            {% if weekend == False %}
+            <div class = "container d-flex flex-column justify-content-between" style="background-color: #FFFFFF; overflow:hidden;">
+                <div class="row" style="padding: 1rem 0 0 1rem; font-size:1.75rem;">Today is</div>
+                <div class="row  justify-content-center" style="font-size: 9rem; font-weight: bold;font-stretch: ultra-expanded;">
+                    {% if daytype == "A" %}
+                        A
+                        {% else %}
+                        B
+                        {% endif %}
+                </div>
+                <div class="row justify-content-center" style="padding-bottom: 1rem; font-size: 1.75rem;">Day</div>
+            </div>
+            {% else %}
+            <div class = "container d-flex flex-column justify-content-center align-items-center" style="background-color: #FFFFFF; min-height: 75%; width:60%">
+                <div class="row" style="font-size:2rem;">No School Today :)</div>
+            </div>
+            {% endif %}
+        </div> 
+    </div>
+
+</div>

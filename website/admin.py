@@ -12,4 +12,5 @@ admin.site.register(Event, EventAdmin)
 class ImportantDatesAdmin(admin.ModelAdmin):
     search_fields = ['content']
 
+admin.site.register(Event, EventAdmin)
 admin.site.register(ImportantDates, ImportantDatesAdmin)
