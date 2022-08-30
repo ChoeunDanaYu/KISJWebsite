@@ -7,13 +7,21 @@ client = boto3.client('s3',aws_access_key_id='AKIA6CHE6EDK67W6A24K',aws_secret_a
 
 # Create your views here.
 def index(request):
-    context = {'weeks' : generate_weeks()}
+    context = {'daytype': generate_daytype(),'weektype': generate_weektype()}
     return render(request, 'website/main.html', context)
 
 
 """
 Functions for rendering
 """
+
+def generate_daytype():
+    start_date = datetime(2022, 8, 15, 0, 0, 0, 0)
+    now = datetime.now()
+    if (now-start_date).days % 2 == 0:
+        return "A"
+    else:
+        return "B"
 
 def generate_weektype():
     start_date = datetime(2022, 8, 15, 0, 0, 0, 0)
@@ -23,4 +31,3 @@ def generate_weektype():
         return "A"
     else:
         return "B"
-
