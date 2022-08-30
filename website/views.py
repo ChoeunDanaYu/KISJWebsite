@@ -31,3 +31,11 @@ def generate_weektype():
         return "A"
     else:
         return "B"
+
+def check_weekend():
+    now = datetime.now()
+    if now.weekday() > 4:
+        return True
+    else:
+        return False
+
