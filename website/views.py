@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Event, ImportantDates
 from datetime import datetime, timedelta
 import boto3
-client = boto3.client('s3',aws_access_key_id='AKIA6CHE6EDK67W6A24K',aws_secret_access_key='h61XsC3Nndjny7Cq4eIaTHdQHWfrARXvOiul4dCg',region_name='ap-northeast-2')
+client = boto3.client('s3')
 
 # Create your views here.
 def index(request):
