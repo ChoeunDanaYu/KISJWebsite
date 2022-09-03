@@ -27,3 +27,19 @@ class ImportantDates(models.Model):
 
     def __str__(self):
         return self.create_date.strftime("%m/%d/%Y %H:%M:%S")
+
+
+grade_choices = (
+    ('Freshman','Freshman'),
+    ('Sophomore', 'Sophomore'),
+    ('Junior','Junior'),
+    ('Senior','Senior'),
+)
+
+class Schedule(models.Model):
+    schedule_grade = models.CharField(max_length=200, choices=grade_choices, default='Freshman')
+    schedule_name = models.CharField(max_length=200)
+    schedule_date = models.DateTimeField()
+
+    def __str__(self):
+        return self.schedule_grade + ' ' + self.schedule_name
