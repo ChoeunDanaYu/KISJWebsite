@@ -20,40 +20,54 @@
             </div>
             {% endif %}
         </div> 
-    </div>
-    <div class="col text-center align-items-center justify-content-center">
-        <p style="font-size: 1.75rem; margin-bottom: 0; padding-top:0.5rem;">Lunch Menu</p>
-        <img data-bs-toggle="modal" data-bs-target="#menu-eng" src="https://kis.ac/files/attach/images/6140/546/634/54c808d892f7828e9052a73bbc14e0c5.png" style="width:20rem;">
-        <img data-bs-toggle="modal" data-bs-target="#menu-kor" src="https://kis.ac/files/attach/images/6140/546/634/990b69a006f307bc4ad389d06984d580.png" style="width:20em; margin-top: 0.25rem;">
-        <div class="modal fade" id="menu-eng">
-            <!--<div class="modal-dialog modal-dialog-centered modal-fullscreen">-->
-          <div class="modal-dialog modal-dialog-centered modal-fullscreen">
-              <img class="card-img" src="https://kis.ac/files/attach/images/6140/546/634/54c808d892f7828e9052a73bbc14e0c5.png" alt="no-image">
-          </div>
+        <div class="col text-center align-items-center justify-content-center">
+            <p style="font-size: 1.75rem; margin-bottom: 0; padding-top:0.5rem;">Lunch Menu</p>
+            <img data-bs-toggle="modal" data-bs-target="#menu-eng" src="https://kis.ac/files/attach/images/6140/546/634/54c808d892f7828e9052a73bbc14e0c5.png" style="width:20rem;">
+            <img data-bs-toggle="modal" data-bs-target="#menu-kor" src="https://kis.ac/files/attach/images/6140/546/634/990b69a006f307bc4ad389d06984d580.png" style="width:20em; margin-top: 0.25rem;">
+            <div class="modal fade" id="menu-eng">
+                <!--<div class="modal-dialog modal-dialog-centered modal-fullscreen">-->
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+                <img class="card-img" src="https://kis.ac/files/attach/images/6140/546/634/54c808d892f7828e9052a73bbc14e0c5.png" alt="no-image">
+            </div>
+            </div>
+            <div class="modal fade" id="menu-kor">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+                <img class="card-img" src="https://kis.ac/files/attach/images/6140/546/634/990b69a006f307bc4ad389d06984d580.png" alt="no-image">
+            </div>
+            </div>
         </div>
-        <div class="modal fade" id="menu-kor">
-          <div class="modal-dialog modal-dialog-centered modal-fullscreen">
-              <img class="card-img" src="https://kis.ac/files/attach/images/6140/546/634/990b69a006f307bc4ad389d06984d580.png" alt="no-image">
-          </div>
+        <div class="col d-flex align-items-center justify-content-center">
+            <div>
+                <p style="font-size: 1.75rem; padding: 0.5rem 0 0.5rem 0.5rem;margin-bottom:0rem;background-color: white;width:42.5rem;">Week Schedule</p>
+                {% if weektype == "A" %}
+                    <img src="https://kisj-info.s3.ap-northeast-2.amazonaws.com/assets/a_tt.jpg" style="max-width:42.5rem;">
+                {% else %}
+                    <img src="https://kisj-info.s3.ap-northeast-2.amazonaws.com/assets/b_tt.jpg" style="max-width:42.5rem;">
+                {% endif %}
+            </div>
         </div>
-    </div>
-    <div class="col d-flex align-items-center justify-content-center">
-        <div>
-            <p style="font-size: 1.75rem; padding: 0.5rem 0 0.5rem 0.5rem;margin-bottom:0rem;background-color: white;width:42.5rem;">Week Schedule</p>
-            {% if weektype == "A" %}
-                <img src="https://kisj-info.s3.ap-northeast-2.amazonaws.com/assets/a_tt.jpg" style="max-width:42.5rem;">
+        <div class="col d-flex align-items-center justify-content-center" style="min-width: 40%;">
+            {% if user.is_superuser %}
+            <a href="{% url 'website:important_dates_edit' %}" style ="text-decoration: none; color:black; background-color: #FFFFFF; height: 100%; width:100%; padding-top: 0.5rem;">
+                <p style="font-size: 1.25rem; padding-left: 0.75rem;overflow:hidden; margin-bottom: 0;"><strong>Important Dates</strong></p>
+                <p style="font-size: 1.25rem; padding-left: 0.75rem;overflow:hidden;margin-bottom: 0.5rem;">{{impdate|linebreaksbr}}<br></p>
+            </a>
             {% else %}
-                <img src="https://kisj-info.s3.ap-northeast-2.amazonaws.com/assets/b_tt.jpg" style="max-width:42.5rem;">
+            <div style ="color:black; background-color: #FFFFFF; height: 100%; width:100%; padding-top: 0.5rem;">
+                <p style="font-size: 1.25rem; padding-left: 0.75rem;overflow:hidden; margin-bottom: 0;"><strong>Important Dates</strong></p>
+                <p style="font-size: 1.25rem; padding-left: 0.75rem;overflow:hidden;margin-bottom: 0.5rem;">{{impdate|linebreaksbr}}<br></p>
+            </div>
             {% endif %}
         </div>
-    </div>
-    <div class="col text-center d-flex align-items-center justify-content-center">
-        <a href="" style ="text-decoration: none; color:black; background-color: #FFFFFF; height: 100%; width:100%; padding: 0.5rem; overflow:hidden;">
-            <p style="font-size: 1rem;">If you are interested<br>in posting on this<br>website...</p>
-            <p style="font-size: 2rem;"><strong>Click Here</strong></p>
-            <p style="font-size: 1rem;">Fill out a form and <br>gain access!</p>
-            <p style="font-size: 0.75rem; margin-bottom: 0.5rem;">If you are a teacher,<br> you do not need further access to post</p>
-        </a>
+        <div class="col text-center d-flex align-items-center justify-content-center">
+            <a href="" style ="text-decoration: none; color:black; background-color: #FFFFFF; height: 100%; width:100%; padding: 0.5rem; overflow:hidden;">
+                <p style="font-size: 1rem;">If you are interested<br>in posting on this<br>website...</p>
+                <p style="font-size: 2rem;"><strong>Click Here</strong></p>
+                <p style="font-size: 1rem;">Fill out a form and <br>gain access!</p>
+                <p style="font-size: 0.75rem; margin-bottom: 0.5rem;">If you are a teacher,<br> you do not need further access to post</p>
+            </a>
+        </div>
+        <div class="w-100"><br></div>
     </div>
 
 </div>
